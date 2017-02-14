@@ -165,15 +165,7 @@ func getPassphrase(repeat bool) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	if repeat {
-		again, err := r.ReadString('\n')
-		if err != nil {
-			return "", err
-		}
-		if passphrase != again {
-			return "", errors.New("Passphrases do not match")
-		}
-	}
+
 	return passphrase, err
 }
 
